@@ -1,45 +1,44 @@
 package ar.edu.unlam.pb2.cazadores;
-import ar.edu.unlam.pb2.profugos.*;
-import ar.edu.unlam.pb2.tipos.*;
+
+import ar.edu.unlam.pb2.*;
+import ar.edu.unlam.pb2.tipos.Entorno;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Cazador {
-	private String nombre;
-    private int nivelExperiencia = 0;
-    private TipoCazador tipo;
-    private ArrayList<Profugo> capturas;
+public abstract class Cazador {
+    protected String nombre;
+    protected int experiencia;
+    protected List<Profugo> capturados;
 
-    public Cazador(String nombre, int nivelExperiencia, TipoCazador tipo) {
+    public Cazador(String nombre, int experiencia) {
         this.nombre = nombre;
-        this.nivelExperiencia = nivelExperiencia;
-        this.tipo = tipo;
-        this.capturas = new ArrayList<>();
+        this.experiencia = experiencia;
+        this.capturados = new ArrayList<>();
+    }
+
+    public void registrarCaptura(Profugo progufo) {
+        capturados.add(progufo);
+    }
+
+    public List<Profugo> getCapturados() {
+        return capturados;
     }
 
     public String getNombre() {
-        return this.nombre;
+        return nombre;
     }
 
-    public int getNivelExperiencia() {
-        return this.nivelExperiencia;
+    public int getExperiencia() {
+        return experiencia;
     }
 
-    public ArrayList<Profugo> getCapturas() {
-        return this.capturas;
+    public void intimidar(Profugo profugo) {
+        profugo.setNivelInocencia(profugo.getNivelInocencia() - 2);
     }
 
-//    public void capturarProfugo(Profugo profugo) {
-//        
-//    } No me dio el tiempo para hacerla
-
-    public int cantidadCapturas() {
-        return capturas.size();
-    }
-
-    @Override
-    public String toString() {
-        return "Cazador: " + this.nombre + " | Experiencia: " + this.nivelExperiencia +
-                " | Capturas: " + this.capturas.size();
-    }
+	public boolean puedeCapturar(Profugo profugo, Entorno entorno) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
