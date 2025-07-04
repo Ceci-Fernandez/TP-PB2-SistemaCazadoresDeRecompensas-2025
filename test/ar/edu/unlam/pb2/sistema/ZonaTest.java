@@ -29,7 +29,7 @@ public class ZonaTest {
     }
     
    @Test
-    public void tRemoverProfugo() {
+    public void pruebaRemoverProfugo() {
         zona.agregarProfugo(profugo1);
         zona.agregarProfugo(profugo2);
         
@@ -46,7 +46,7 @@ public class ZonaTest {
     }
     
     @Test
-    public void testHashSetPrevieneDuplicados() {
+    public void pruebaQueElHashSetPrevieneDuplicados() {
         zona.agregarProfugo(profugo1);
         zona.agregarProfugo(profugo1); 
         
