@@ -20,25 +20,25 @@ public class Profugo {
         this.esNervioso = esNervioso;
     }
     
-    public void reducirInocencia(int cantidad) {
+    public void reducirInocencia(Integer cantidad) {
         this.nivelInocencia = Math.max(0, this.nivelInocencia - cantidad);
     }
     
-    public void setNervioso(boolean nervioso) {
+    public void setNervioso(Boolean nervioso) {
         this.esNervioso = nervioso;
     }
     
-    public void reducirHabilidad(int cantidad) {
+    public void reducirHabilidad(Integer cantidad) {
         this.nivelHabilidad = Math.max(0, this.nivelHabilidad - cantidad);
     }
     
-    public int getNivelInocencia() {
+    public Integer getNivelInocencia() {
     	return nivelInocencia; 
     	}
-    public int getNivelHabilidad() {
+    public Integer getNivelHabilidad() {
     	return nivelHabilidad; 
     	}
-    public boolean isNervioso() {
+    public Boolean isNervioso() {
     	return esNervioso; 
     	}
     
