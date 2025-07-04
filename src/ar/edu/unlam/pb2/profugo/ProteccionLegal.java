@@ -1,10 +1,10 @@
 package ar.edu.unlam.pb2.profugo;
 
-public class ProteccionLegall extends ProfugoBase {
+public class ProteccionLegal extends ProfugoBase {
 
 	 private static final int INOCENCIA_MINIMA = 40;
 	    
-	    public ProteccionLegall(Profugo profugo) {
+	    public ProteccionLegal(Profugo profugo) {
 	        super(profugo);
 	    }
 	    
