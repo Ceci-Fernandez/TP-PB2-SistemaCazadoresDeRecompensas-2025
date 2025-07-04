@@ -56,26 +56,26 @@ public class CazadorTest {
     public void queSeReduzcanDosDeInocenciaAlIntimidar() {
         int inocenciaInicial = profugoNervioso.getNivelInocencia();
         cazadorUrbano.realizarCaptura(zona);
-        assertEquals(inocenciaInicial - 2, profugoNervioso.getNivelInocencia());
+        assertEquals(inocenciaInicial - 2, profugoNervioso.getNivelInocencia(),0.01);
     }
     
     @Test
     public void queSePuedaDuplicarHabilidadConArtesMarciales() {
         Profugo profugoConArtes = new ArtesMarciales(new Profugo(30, 40, false));
-        assertEquals(80, profugoConArtes.getNivelHabilidad());
+        assertEquals(80, profugoConArtes.getNivelHabilidad(),0.01);
     }
     
     @Test
-    public void queArtesMarciales_NoSupereLimiteMaximo() {
+    public void queArtesMarcialesNoSupereLimiteMaximo() {
         Profugo profugoConArtes = new ArtesMarciales(new Profugo(30, 60, false));
-        assertEquals(100, profugoConArtes.getNivelHabilidad());
+        assertEquals(100, profugoConArtes.getNivelHabilidad(),0.01);
     }
     
     @Test
-    public void queSePuedaMantenerInocenciaMinimaCon_ProteccionLegal() {
+    public void queSePuedaMantenerInocenciaMinimaConProteccionLegal() {
         Profugo profugoConProteccion = new ProteccionLegal(new Profugo(30, 40, false));
         profugoConProteccion.reducirInocencia(50);
-        assertEquals(40, profugoConProteccion.getNivelInocencia());
+        assertEquals(40, profugoConProteccion.getNivelInocencia(),0.01);
     }
     
     @Test
@@ -90,7 +90,7 @@ public class CazadorTest {
    
     @Test
     public void queSeCalculeExperienciaCorrectamente() {
-        // Crear zona limpia para este test
+   
         Zona zonaLimpia = new Zona("TestZona");
         
         Profugo profugo1 = new Profugo(20, 30, false);
