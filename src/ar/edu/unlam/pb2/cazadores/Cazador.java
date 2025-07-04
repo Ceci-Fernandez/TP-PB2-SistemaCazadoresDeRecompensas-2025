@@ -2,6 +2,7 @@ package ar.edu.unlam.pb2.cazadores;
 
 import java.util.*;
 
+import ar.edu.unlam.pb2.excepciones.ProfugoException;
 import ar.edu.unlam.pb2.profugo.Profugo;
 import ar.edu.unlam.pb2.sistema.Zona;
 
@@ -18,11 +19,15 @@ public abstract class Cazador {
         this.profugosCapturados = new ArrayList<>();
     }
     
-    public void realizarCaptura(Zona zona) {
+    public void realizarCaptura(Zona zona) throws ProfugoException{
         List<Profugo> profugosIntimidados = new ArrayList<>();
         Set<Profugo> profugosARemover = new HashSet<>();
         
         int capturasAntes = profugosCapturados.size();      
+        
+        if(zona == null) {
+        	throw new ProfugoException ("Zona invalida");
+        }
        
         for (Profugo profugo : zona.getProfugos()) {
             if (puedeCapturar(profugo)) {
