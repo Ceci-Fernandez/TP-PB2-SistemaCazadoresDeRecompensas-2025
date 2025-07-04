@@ -23,6 +23,10 @@ public class Zona {
     public void removerProfugo(Profugo profugo) {
         profugos.remove(profugo);
     }
+    public void removerProfugos(Set<Profugo> profugosARemover) {
+		profugos.removeAll(profugosARemover);
+		
+	}
   
     public Set<Profugo> getProfugos() {
         return new HashSet<>(profugos);
@@ -36,4 +40,6 @@ public class Zona {
     public String toString() {
         return String.format("Zona[%s - %d prófugos]", nombre, profugos.size());
     }
+
+	
 }
