@@ -1,8 +1,8 @@
 package ar.edu.unlam.pb2.cazadores;
 
+import ar.edu.unlam.pb2.excepciones.ProfugoException;
 import ar.edu.unlam.pb2.profugo.*;
 import ar.edu.unlam.pb2.sistema.Zona;
-import ar.edu.unlam.pb2.cazadores.*;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -103,5 +103,10 @@ public class CazadorTest {
         cazadorUrbano.realizarCaptura(zonaLimpia);
         
         assertEquals(experienciaInicial + 42, cazadorUrbano.getExperiencia());
+    }
+    
+    @Test (expected = ProfugoException.class)
+    public void queNoSePuedaCapturarSiZonaEsNull() throws ProfugoException{
+    	cazadorUrbano.realizarCaptura(null);
     }
 }
