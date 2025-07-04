@@ -1,7 +1,7 @@
 package ar.edu.unlam.pb2.cazadores;
 
-import ar.edu.unlam.pb2.*;
-import ar.edu.unlam.pb2.tipos.Entorno;
+import ar.edu.unlam.pb2.profugo.Profugo;
+import ar.edu.unlam.pb2.sistema.Zona;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,12 +33,27 @@ public abstract class Cazador {
         return experiencia;
     }
 
-    public void intimidar(Profugo profugo) {
-        profugo.setNivelInocencia(profugo.getNivelInocencia() - 2);
+    public void intimidarProfugo(Profugo profugo) {
+       
     }
 
-	public boolean puedeCapturar(Profugo profugo, Entorno entorno) {
+	public boolean puedeCapturar(Profugo profugo) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public int getCantidadCapturas() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void realizarCaptura(Zona zona) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public List<Profugo> getProfugosCapturados() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
