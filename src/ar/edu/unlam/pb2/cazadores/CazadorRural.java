@@ -1,6 +1,7 @@
 package ar.edu.unlam.pb2.cazadores;
 
-import ar.edu.unlam.pb2.tipos.Entorno;
+import ar.edu.unlam.pb2.profugo.Entorno;
+import ar.edu.unlam.pb2.profugo.Profugo;
 
 public class CazadorRural extends Cazador {
     public CazadorRural(String nombre, int experiencia) {
