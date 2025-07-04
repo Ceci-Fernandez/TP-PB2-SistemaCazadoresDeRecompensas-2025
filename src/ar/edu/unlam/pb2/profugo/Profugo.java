@@ -2,8 +2,8 @@ package ar.edu.unlam.pb2.profugo;
 
 public class Profugo {
  
-    private Integer nivelInocencia = 0;
-    private Integer nivelHabilidad = 0;
+    private Integer nivelInocencia ;
+    private Integer nivelHabilidad;
     private Boolean esNervioso ;
 
     public Profugo( Integer nivelInocencia, Integer nivelHabilidad, Boolean nervioso) {
