@@ -1,23 +1,20 @@
 package ar.edu.unlam.pb2.cazadores;
 
-import ar.edu.unlam.pb2.profugo.Entorno;
 import ar.edu.unlam.pb2.profugo.Profugo;
 
 public class CazadorUrbano extends Cazador {
-    public CazadorUrbano(String nombre, int experiencia) {
-        super(nombre, experiencia);
+    
+    public CazadorUrbano(String nombre, Integer experienciaInicial) {
+        super(nombre, experienciaInicial);
     }
-
+    
     @Override
-    public boolean puedeCapturar(Profugo profugo, Entorno entorno) {
-    	int expActual = this.getExperiencia();
-    	
-    	if(entorno == entorno.URBANO) {
-    		expActual += 20;
-    	}
-    	this.intimidar(profugo);
-        return expActual > profugo.getNivelInocencia() && profugo.isNervioso() != true ;
+    protected Boolean capturaEspecifica(Profugo profugo) {
+        return !profugo.isNervioso();
     }
-
-
+    
+    @Override
+    protected void intimidacionEspecifica(Profugo profugo) {
+        profugo.setNervioso(false);
+    }
 }
